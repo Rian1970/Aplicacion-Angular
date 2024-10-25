@@ -1,0 +1,95 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Estilo para los enlaces dentro de la barra de herramientas */
+  mat-toolbar a {
+    color: white; 
+    text-decoration: none; 
+  }
+  
+  /* Cambia el color cuando el enlace está siendo hover */
+  mat-toolbar a:hover {
+    color: lightgray;
+  }
+  .spacer {
+    flex: 1;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 16px; 
+    margin-left: 20px;
+  }
+  
+  .nav {
+    margin-right: 20px;
+  }
+  
+  .custom-menu a {
+    display: block; 
+  }
+  
+  .example-sidenav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    height: 100%; 
+    color: #3F51B5;
+  }
+  
+  .mat-drawer {
+    position: fixed; 
+    top: 0;           
+    bottom: 0;        
+    width: 170px;     
+  }
+  
+  .mat-drawer-container {
+    height: 100vh;    /* Hace que el drawer container ocupe toda la altura de la ventana */
+    color: #3F51B5;
+  }
+  
+  .example-sidenav-content {
+    margin-left: 250px; /* Espacio a la izquierda para el contenido principal */
+  }
+  
+  .left-links,
+  .right-links {
+    display: flex; /* Hace que los elementos dentro de estos divs se muestren en línea */
+  }
+  
+  .right-links {
+    margin-left: auto; /* Empuja estos elementos hacia la derecha tanto como sea posible */
+  }
+  
+  /* Estilo por defecto para el botón */
+  .mobile-only {
+    display: none; /* Oculta el botón por defecto */
+  }
+  
+  .mobile-hide {
+    display: block; /* Muestra el div por defecto */
+  }
+  
+  /* Mostrar el botón solo en dispositivos con ancho máximo de 600px */
+  @media (max-width: 768px) {
+    .mobile-only {
+      display: inline-block; /* Muestra el botón */
+    }
+    .mobile-hide {
+      display: none; /* Oculta el div */
+    }
+  }
+  
+  @media (max-width: 1440px) {
+  
+  }
+  
+  

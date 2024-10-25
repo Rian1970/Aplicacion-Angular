@@ -1,0 +1,22 @@
+.botones{
+  margin-left: 1rem; 
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  margin-bottom: 16px; 
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.form-field {
+  width: 100%; 
+}
+  

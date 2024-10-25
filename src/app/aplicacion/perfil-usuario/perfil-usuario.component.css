@@ -1,0 +1,64 @@
+/* Contenedor para las tarjetas */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}  
+
+/* Tarjeta  */
+.example-card {
+  margin-bottom: 20px; 
+  width: 80%; 
+  max-width: 400px; 
+}
+
+/* Estilo de los botones de la tarjeta */
+.botones{
+  margin-left: 1rem; 
+}
+
+/* Estilos para la tarjeta de búsqueda */
+.example-card-search {
+  margin-bottom: 20px; 
+  width: 80%; 
+  max-width: 400px; 
+  background-color: #3F51B5;
+}
+
+.custom-content {
+  color: white; 
+}
+
+/* Estilo para tablet */
+@media (max-width: 768px) {
+  .container-cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+  }  
+}
+
+/* Estilo para laptop */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .container-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 20px; 
+      padding-left: 100px; 
+    }          
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 1440px) and (max-width: 2560px) {
+  .container-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
+      padding-left: 100px; 
+    }          
+}
+
+
+

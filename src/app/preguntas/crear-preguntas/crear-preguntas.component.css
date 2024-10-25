@@ -1,0 +1,49 @@
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: normal;
+}
+
+.botones{
+  margin-left: 1rem; 
+}
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}
+
+.example-card {
+  margin-bottom: 20px; 
+  width: 80%; 
+  max-width: 400px; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}  
+
+.example-full-width {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .example-full-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  .example-full-width {
+    width: 40%;
+  }
+}

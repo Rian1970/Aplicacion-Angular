@@ -1,0 +1,34 @@
+<div class="container">
+
+    <!-- Formulario para login -->
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      
+      <!-- Input para email -->
+      <table class="example-full-width">
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput placeholder="@gmail.com, @hotmail.com" id="email" formControlName="email" required>
+          <mat-error *ngIf="loginForm.get('email')!.hasError('required')">El correo es requerido</mat-error>
+          <mat-error *ngIf="loginForm.get('email')!.hasError('email')">El correo no es válido</mat-error>
+        </mat-form-field></td>
+      </table>
+  
+      <!-- Input para contraseña -->
+      <table class="example-full-width">
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" id="password" formControlName="password" required>
+          <mat-error *ngIf="loginForm.get('password')!.hasError('required')">La contraseña es requerida</mat-error>
+          <mat-error *ngIf="loginForm.get('password')!.hasError('minlength')">La contraseña debe tener al menos 6 caracteres</mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field></td>
+      </table>
+      
+      <!-- Botón deshabilitado si no estan llenos los inputs -->
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Entrar</button>
+  
+    </form>
+
+  </div>

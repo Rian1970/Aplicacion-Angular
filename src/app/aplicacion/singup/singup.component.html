@@ -1,0 +1,57 @@
+<div class="container">
+
+    <!-- Formulario para crear un usuario -->
+    <form class="example-form" [formGroup]="registroForm" (ngSubmit)="registar(registroForm.value)">
+      
+      <!-- Input del nombre -->
+      <table class="example-full-width">
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Nombre completo</mat-label>
+          <input matInput id="nombre" formControlName="nombre" required>
+          <mat-error *ngIf="registroForm.get('nombre')!.hasError('required')">El nombre es requerido</mat-error>
+          <mat-error *ngIf="registroForm.get('nombre')!.hasError('minlength')">El nombre debe tener al menos 3 caracteres</mat-error>
+        </mat-form-field></td>
+      </table>
+  
+      <!-- Input de la fecha de nacimiento -->
+      <table class="example-full-width">
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input matInput placeholder="Ex. 01-01-1991" id="fecha_nacimiento" formControlName="fecha_nacimiento" required>
+          <mat-error *ngIf="registroForm.get('fecha_nacimiento')!.hasError('required')">La fecha de nacimiento es requerida</mat-error>
+          <mat-error *ngIf="registroForm.get('fecha_nacimiento')!.hasError('fechaNacimientoInvalida')">El formato de la fecha de nacimiento es incorrecto (DD-MM-YYYY)</mat-error>
+        </mat-form-field></td>
+      </table>
+  
+      <!-- Input para el correo -->
+      <table class="example-full-width">
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput placeholder="@gmail.com, @hotmail.com" id="email" formControlName="email" required>
+          <mat-error *ngIf="registroForm.get('email')!.hasError('required')">El correo es requerido</mat-error>
+          <mat-error *ngIf="registroForm.get('email')!.hasError('email')">El correo no es válido</mat-error>
+        </mat-form-field></td>
+      </table>
+      @if (correoUsado != "") {
+        <p class="texto-rojo">{{correoUsado}}</p>
+      }
+  
+      <!-- Input para la contraseña -->
+      <table class="example-full-width">
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" id="password" formControlName="password" required>
+          <mat-error *ngIf="registroForm.get('password')!.hasError('required')">La contraseña es requerida</mat-error>
+          <mat-error *ngIf="registroForm.get('password')!.hasError('minlength')">La contraseña debe tener al menos 6 caracteres</mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field></td>
+      </table>
+           
+      <!-- Botón deshabilitado si no estan llenos los inputs -->
+      <button mat-raised-button color="primary" type="submit" [disabled]="registroForm.invalid">Crear usuario</button>
+  
+    </form>
+    
+  </div>
